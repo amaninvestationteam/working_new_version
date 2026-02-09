@@ -2,12 +2,12 @@
 
 import SignIn from '@/components/auth/SignIn'
 import { onSignInWithCredentials } from '@/server/actions/auth/handleSignIn'
-import handleOauthSignIn from '@/server/actions/auth/handleOauthSignIn'
+//import handleOauthSignIn from '@/server/actions/auth/handleOauthSignIn'
 import { REDIRECT_URL_KEY } from '@/constants/app.constant'
 import { useSearchParams } from 'next/navigation'
 import type {
     OnSignInPayload,
-    OnOauthSignInPayload,
+    //OnOauthSignInPayload,
 } from '@/components/auth/SignIn'
 
 const SignInClient = () => {
@@ -29,16 +29,16 @@ const SignInClient = () => {
         })
     }
 
-    const handleOAuthSignIn = async ({ type }: OnOauthSignInPayload) => {
-        if (type === 'google') {
-            await handleOauthSignIn('google')
-        }
-        if (type === 'github') {
-            await handleOauthSignIn('github')
-        }
-    }
+    // const handleOAuthSignIn = async ({ type }: OnOauthSignInPayload) => {
+    //     if (type === 'google') {
+    //         await handleOauthSignIn('google')
+    //     }
+    //     if (type === 'github') {
+    //         await handleOauthSignIn('github')
+    //     }
+    // }
 
-    return <SignIn onSignIn={handleSignIn} onOauthSignIn={handleOAuthSignIn} />
+    return <SignIn onSignIn={handleSignIn} /> //onOauthSignIn={handleOAuthSignIn} />
 }
 
 export default SignInClient

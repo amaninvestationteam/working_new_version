@@ -3,25 +3,25 @@
 import Logo from '@/components/template/Logo'
 import Alert from '@/components/ui/Alert'
 import SignInForm from './SignInForm'
-import OauthSignIn from './OauthSignIn'
+//import OauthSignIn from './OauthSignIn'
 import ActionLink from '@/components/shared/ActionLink'
 import useTimeOutMessage from '@/utils/hooks/useTimeOutMessage'
 import useTheme from '@/utils/hooks/useTheme'
 import type { OnSignIn } from './SignInForm'
-import type { OnOauthSignIn } from './OauthSignIn'
+//import type { OnOauthSignIn } from './OauthSignIn'
 
 type SignInProps = {
     signUpUrl?: string
     forgetPasswordUrl?: string
     onSignIn?: OnSignIn
-    onOauthSignIn?: OnOauthSignIn
+    //onOauthSignIn?: OnOauthSignIn
 }
 
 const SignIn = ({
     signUpUrl = '/sign-up',
     forgetPasswordUrl = '/forgot-password',
     onSignIn,
-    onOauthSignIn,
+    //onOauthSignIn,
 }: SignInProps) => {
     const [message, setMessage] = useTimeOutMessage()
 
@@ -66,15 +66,15 @@ const SignIn = ({
             <div className="mt-8">
                 <div className="flex items-center gap-2 mb-6">
                     <div className="border-t border-gray-200 dark:border-gray-800 flex-1 mt-[1px]" />
-                    <p className="font-semibold heading-text">
+                    {/* <p className="font-semibold heading-text">
                         or countinue with
-                    </p>
+                    </p> */}
                     <div className="border-t border-gray-200 dark:border-gray-800 flex-1 mt-[1px]" />
                 </div>
-                <OauthSignIn
+                {/* <OauthSignIn
                     setMessage={setMessage}
                     onOauthSignIn={onOauthSignIn}
-                />
+                /> */}
             </div>
             <div>
                 <div className="mt-6 text-center">
